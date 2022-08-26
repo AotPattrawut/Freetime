@@ -34,7 +34,7 @@ public class HeadTracking : MonoBehaviour
         }
         else
         {
-            Target.position = targetDefault.position;
+            Target.position = targetDefault.position ;
         }
 
     }

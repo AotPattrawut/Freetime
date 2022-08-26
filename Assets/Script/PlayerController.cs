@@ -42,24 +42,26 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical") * speedMovement;
         transform.Translate(new Vector3(horizontal, 0, vertical) * (Time.deltaTime));
-        if(horizontal != 0)
+
+        /*if (horizontal != 0)
         {
             animator.SetBool("isTurn", true);
-        }else
+        }
+        else
         {
             animator.SetBool("isTurn", false);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(jumpCoroutine(jumpDelay));
-        }
+        }*/
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speedMovement = 20f;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift) || vertical < 0)
         {
-            speedMovement = 5f;
+            speedMovement = 3f;
         }
         animator.SetFloat("Speed", vertical);
         animator.SetFloat("turn", horizontal);
